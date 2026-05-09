@@ -105,22 +105,22 @@ Files:
 
 ### Person 3: Ghaith Bouabda - Recruiter Module
 
-- [ ] Create recruiter dashboard
-- [ ] Create job offer form
-- [ ] Save job offer
-- [ ] Display recruiter's job offers
-- [ ] Display candidates who applied to each job
-- [ ] Add Accept button
-- [ ] Add Reject button
-- [ ] Update application status
+- [x] Create recruiter dashboard
+- [x] Create job offer form
+- [x] Save job offer
+- [x] Display recruiter's job offers
+- [x] Display candidates who applied to each job
+- [x] Add Accept button
+- [x] Add Reject button
+- [x] Update application status
 
 Files:
-- [ ] recruiter/dashboard.php
-- [ ] recruiter/create_job.php
-- [ ] recruiter/save_job.php
-- [ ] recruiter/applications.php
-- [ ] recruiter/accept.php
-- [ ] recruiter/reject.php
+- [x] recruiter/dashboard.php
+- [x] recruiter/create_job.php
+- [x] recruiter/save_job.php
+- [x] recruiter/applications.php
+- [x] recruiter/accept.php
+- [x] recruiter/reject.php
 
 ### Person 4: Safa Khedhawria - UI + Email + Testing
 
