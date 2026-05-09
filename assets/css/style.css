@@ -1,0 +1,311 @@
+/*
+Person 4: Safa Khedhawria will contribute here.
+Responsibility: UI design, page styling, final visual polish.
+Existing styles support Person 2 screens and should be extended carefully.
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+/* Base layout and typography shared by all simple PHP pages. */
+body {
+    margin: 0;
+    background: #f6f4ef;
+    color: #202426;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: #0f766e;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header/navigation used by candidate pages. */
+.site-header {
+    align-items: center;
+    background: #ffffff;
+    border-bottom: 1px solid #ded8ce;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 6vw;
+}
+
+.brand {
+    color: #202426;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.nav-links a {
+    color: #364043;
+    font-weight: 600;
+}
+
+/* Page containers keep forms readable on large screens and usable on mobile. */
+.page-shell {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 40px 20px;
+}
+
+.page-shell.narrow {
+    max-width: 720px;
+}
+
+.page-shell.wide {
+    max-width: 1180px;
+}
+
+/* Reusable white surfaces for forms, dashboards, and job cards. */
+.panel,
+.form-card,
+.job-card {
+    background: #ffffff;
+    border: 1px solid #ded8ce;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(32, 36, 38, 0.06);
+}
+
+.panel {
+    padding: 28px;
+}
+
+.form-card {
+    display: grid;
+    gap: 10px;
+    padding: 24px;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    margin: 0 0 14px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h3 {
+    color: #596064;
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+/* Form controls are intentionally plain so Person 1/3 can extend them easily. */
+label {
+    color: #364043;
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid #c8c0b5;
+    border-radius: 6px;
+    color: #202426;
+    font: inherit;
+    padding: 11px 12px;
+    width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0f766e;
+    outline: 3px solid rgba(15, 118, 110, 0.16);
+}
+
+input[readonly] {
+    background: #f2eee7;
+    color: #596064;
+}
+
+/* Buttons use classes instead of element-only styling because forms and links both act as actions. */
+.button {
+    align-items: center;
+    background: #0f766e;
+    border: 0;
+    border-radius: 6px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 16px;
+}
+
+.button:hover {
+    background: #115e59;
+    text-decoration: none;
+}
+
+.button.secondary {
+    background: #b45309;
+}
+
+.button.secondary:hover {
+    background: #92400e;
+}
+
+.button:disabled {
+    background: #a9b0ad;
+    cursor: not-allowed;
+}
+
+.action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Message blocks support simple redirect-based feedback from PHP handlers. */
+.message {
+    border-radius: 6px;
+    margin: 16px 0;
+    padding: 12px 14px;
+}
+
+.message.success {
+    background: #e6f4ea;
+    border: 1px solid #95d5a6;
+    color: #166534;
+}
+
+.message.error,
+.client-errors:not(:empty) {
+    background: #fde8e8;
+    border: 1px solid #f5a5a5;
+    color: #991b1b;
+}
+
+.message.warning {
+    background: #fff7dc;
+    border: 1px solid #e7c86a;
+    color: #7c4a03;
+}
+
+.client-errors {
+    border-radius: 6px;
+    padding: 0;
+}
+
+.client-errors:not(:empty) {
+    padding: 12px 14px;
+}
+
+.client-errors ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.small-note {
+    color: #596064;
+    font-size: 14px;
+}
+
+/* Candidate job listing cards. */
+.page-heading {
+    margin-bottom: 22px;
+}
+
+.job-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.job-card {
+    padding: 22px;
+}
+
+.job-card-header {
+    align-items: flex-start;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+.job-meta {
+    color: #596064;
+    margin-bottom: 0;
+}
+
+.job-section {
+    border-top: 1px solid #ede7dd;
+    margin-top: 16px;
+    padding-top: 16px;
+}
+
+.status-badge {
+    border-radius: 999px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 10px;
+    text-transform: capitalize;
+}
+
+.status-badge.pending {
+    background: #fff7dc;
+    color: #7c4a03;
+}
+
+.status-badge.accepted {
+    background: #e6f4ea;
+    color: #166534;
+}
+
+.status-badge.rejected {
+    background: #fde8e8;
+    color: #991b1b;
+}
+
+/* Landing page is intentionally simple because authentication is owned by Person 1. */
+.landing {
+    align-items: center;
+    display: grid;
+    min-height: 100vh;
+}
+
+/* Small-screen adjustments for navigation and cards. */
+@media (max-width: 640px) {
+    .site-header,
+    .job-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .panel,
+    .form-card,
+    .job-card {
+        padding: 18px;
+    }
+}
