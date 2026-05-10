@@ -1,4 +1,19 @@
 <?php
+session_start();
+
+// If a user is already logged in, keep them out of the auth pages.
+if (isset($_SESSION['user_id'])) {
+    if (($_SESSION['role'] ?? '') === 'candidate') {
+        header('Location: candidate/dashboard.php');
+        exit;
+    }
+
+    if (($_SESSION['role'] ?? '') === 'recruiter') {
+        header('Location: recruiter/dashboard.php');
+        exit;
+    }
+}
+
 // Frontend signup page for the minimal auth handler in auth/signup.php.
 $errors = [
     'missing_fields' => 'Please complete all fields.',

@@ -44,6 +44,9 @@ recruitment-system/
 |   |-- package.json
 |   |-- server.js
 |   `-- .env.example
+|-- database/
+|   |-- schema.sql
+|   `-- README.md
 |-- index.php
 |-- signup.php
 |-- signin.php
@@ -64,24 +67,28 @@ Person 4: Safa Khedhawria - UI polish, native JavaScript improvements, Nodemaile
 
 ### Person 1: Yasmine Zaatour - Setup + Authentication
 
-- [ ] Create project folder
-- [ ] Create GitHub repository
+- [x] Create project folder
+- [x] Create GitHub repository
 - [ ] Create database in phpMyAdmin
-- [ ] Create all database tables
-- [ ] Create database connection file
-- [ ] Create sign up page
-- [ ] Create sign in page
-- [ ] Add password hashing
-- [ ] Add role-based redirection
-- [ ] Add logout
+- [x] Create all database tables
+- [x] Create database connection file
+- [x] Create sign up page
+- [x] Create sign in page
+- [x] Add password hashing
+- [x] Add role-based redirection
+- [x] Add logout
 
 Files:
-- [ ] config/db.php
-- [ ] signup.php
-- [ ] signin.php
-- [ ] auth/signup.php
-- [ ] auth/signin.php
-- [ ] auth/logout.php
+- [x] config/db.php
+- [x] signup.php
+- [x] signin.php
+- [x] auth/signup.php
+- [x] auth/signin.php
+- [x] auth/logout.php
+- [x] candidate/dashboard.php
+- [x] recruiter/dashboard.php
+- [x] database/schema.sql
+- [x] database/README.md
 
 ### Person 2: Dhia Ayed - Candidate Module
 
@@ -170,6 +177,40 @@ Missing or needs review:
 - Person 2 files should not be overwritten unless coordinated with Dhia Ayed.
 - Do not use Laravel, Symfony, React, Vue, Bootstrap, Tailwind, jQuery, PHPMailer, or PHP mail().
 - PHP code should continue using PDO, prepared statements, sessions, and htmlspecialchars().
+
+## Local Setup With MAMP
+
+1. Put this project folder inside MAMP's `htdocs` folder.
+2. Start Apache and MySQL from MAMP.
+3. Open phpMyAdmin from the MAMP start page.
+4. Go to the SQL tab.
+5. Copy and run the SQL from `database/schema.sql`.
+6. Open the project in the browser:
+
+```text
+http://localhost:8888/intelligent-recrutement-platform/
+```
+
+If your folder is renamed to `Recruitment-System`, use:
+
+```text
+http://localhost:8888/Recruitment-System/
+```
+
+## Authentication Test Flow
+
+1. Open the homepage.
+2. Click Create Account.
+3. Create a candidate account.
+4. Sign in with that candidate account.
+5. Confirm it redirects to `candidate/dashboard.php`.
+6. Click Logout.
+7. Create a recruiter account.
+8. Sign in with that recruiter account.
+9. Confirm it redirects to `recruiter/dashboard.php`.
+10. Click Logout.
+11. Try opening `candidate/dashboard.php` or `recruiter/dashboard.php` while logged out.
+12. Confirm the app redirects back to `signin.php`.
 
 ## Nodemailer Mail Service
 
