@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+// Logged-in users should go directly to their own dashboard.
+if (isset($_SESSION['user_id'])) {
+    if (($_SESSION['role'] ?? '') === 'candidate') {
+        header('Location: candidate/dashboard.php');
+        exit;
+    }
+
+    if (($_SESSION['role'] ?? '') === 'recruiter') {
+        header('Location: recruiter/dashboard.php');
+        exit;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 require_once __DIR__ . '/../config/db.php';
 
-$email = trim($_POST['email'] ?? '');
+$email = strtolower(trim($_POST['email'] ?? ''));
 $password = $_POST['password'] ?? '';
 
 if ($email === '' || $password === '') {
@@ -29,18 +29,28 @@ try {
         exit;
     }
 
-    // Regenerate the session ID after login to reduce session fixation risk.
-    session_regenerate_id(true);
-    $_SESSION['user_id'] = (int) $user['id'];
-    $_SESSION['role'] = $user['role'];
-
     // Candidate pages enforce role again, so this redirect is only a convenience.
     if ($user['role'] === 'candidate') {
+        // Regenerate the session ID after login to reduce session fixation risk.
+        session_regenerate_id(true);
+        $_SESSION['user_id'] = (int) $user['id'];
+        $_SESSION['role'] = $user['role'];
+
         header('Location: ../candidate/dashboard.php');
         exit;
     }
 
-    header('Location: ../recruiter/dashboard.php');
+    if ($user['role'] === 'recruiter') {
+        // Regenerate the session ID after login to reduce session fixation risk.
+        session_regenerate_id(true);
+        $_SESSION['user_id'] = (int) $user['id'];
+        $_SESSION['role'] = $user['role'];
+
+        header('Location: ../recruiter/dashboard.php');
+        exit;
+    }
+
+    header('Location: ../signin.php?error=invalid_credentials');
     exit;
 } catch (PDOException $e) {
     // Do not echo database errors in authentication screens.
