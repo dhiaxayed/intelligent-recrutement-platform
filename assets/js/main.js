@@ -93,3 +93,60 @@ Existing code includes Person 2 profile validation and apply confirmation.
         });
     });
 })();
+/* =====================================================
+   Person 4 – Safa Khedhawria – Additions
+   Recruiter confirmations + alert auto-hide + CV label
+   ===================================================== */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // ── Accept / Reject confirmation ──────────────────────────────────────
+    // data-action="accept" ou "reject", data-name="Yasmine Ben Ali"
+    document.querySelectorAll('[data-decision-form]').forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            var action = form.getAttribute('data-action');   // 'accept' | 'reject'
+            var name   = form.getAttribute('data-name') || 'ce candidat';
+            var msg    = action === 'accept'
+                ? 'Accepter ' + name + ' et envoyer l\'email d\'invitation ?'
+                : 'Rejeter la candidature de ' + name + ' ?';
+
+            if (!window.confirm(msg)) {
+                event.preventDefault();
+            }
+        });
+    });
+
+    // ── Auto-hide flash messages after 5 s ───────────────────────────────
+    document.querySelectorAll('.message').forEach(function (el) {
+        setTimeout(function () {
+            el.style.transition = 'opacity 0.6s';
+            el.style.opacity    = '0';
+            setTimeout(function () {
+                if (el.parentNode) el.parentNode.removeChild(el);
+            }, 650);
+        }, 5000);
+    });
+
+    // ── CV file input – show chosen filename ─────────────────────────────
+    var cvInput = document.getElementById('cv');
+    var cvLabel = document.getElementById('cv-filename');
+    if (cvInput && cvLabel) {
+        cvInput.addEventListener('change', function () {
+            cvLabel.textContent = this.files.length
+                ? '📎 ' + this.files[0].name
+                : '';
+        });
+    }
+
+    // ── Job description character counter ────────────────────────────────
+    var descField   = document.getElementById('description');
+    var descCounter = document.getElementById('desc-counter');
+    if (descField && descCounter) {
+        function updateCounter() {
+            descCounter.textContent = descField.value.length + ' caractères';
+        }
+        descField.addEventListener('input', updateCounter);
+        updateCounter();
+    }
+
+});

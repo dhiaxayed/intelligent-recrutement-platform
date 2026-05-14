@@ -40,16 +40,17 @@ $profileExists = (bool) $stmt->fetch();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate Dashboard</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
     <header class="site-header">
-        <a class="brand" href="dashboard.php">Recruitment Platform</a>
-        <nav class="nav-links">
-            <a href="profile.php">Profile</a>
-            <a href="jobs.php">Jobs</a>
-            <a href="../auth/logout.php">Logout</a>
-        </nav>
-    </header>
+    <a class="brand" href="dashboard.php">🏢 RecruitPro</a>
+    <nav class="nav-links">
+        <a href="profile.php">Profile</a>
+        <a href="jobs.php">Jobs</a>
+        <a href="../auth/logout.php" class="logout-link">Logout</a>
+    </nav>
+</header>
 
     <main class="page-shell">
         <section class="panel">
