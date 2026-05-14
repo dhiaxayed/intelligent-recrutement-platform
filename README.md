@@ -131,25 +131,25 @@ Files:
 
 ### Person 4: Safa Khedhawria - UI + Email + Testing
 
-- [ ] Create CSS design
-- [ ] Improve UI with native JavaScript
-- [ ] Configure Nodemailer mail service
-- [ ] Create mail-service/server.js
-- [ ] Create mail-service/package.json
-- [ ] Create mail-service/.env.example
-- [ ] Send email when candidate is accepted
-- [ ] Add Google Meet link in acceptance email
-- [ ] Test all project flows
-- [ ] Fix bugs with the team
-- [ ] Prepare demo scenario
+- [x] Create CSS design
+- [x] Improve UI with native JavaScript
+- [x] Configure Nodemailer mail service
+- [x] Create mail-service/server.js
+- [x] Create mail-service/package.json
+- [x] Create mail-service/.env.example
+- [x] Send email when candidate is accepted
+- [x] Add Google Meet link in acceptance email
+- [x] Test all project flows
+- [x] Fix bugs with the team
+- [x] Prepare demo scenario
 
 Files:
-- [ ] assets/css/style.css
-- [ ] assets/js/main.js
-- [ ] recruiter/accept.php
-- [ ] mail-service/package.json
-- [ ] mail-service/server.js
-- [ ] mail-service/.env.example
+- [x] assets/css/style.css
+- [x] assets/js/main.js
+- [x] recruiter/accept.php
+- [x] mail-service/package.json
+- [x] mail-service/server.js
+- [x] mail-service/.env.example
 
 ## Person 2 Verification Notes
 
