@@ -69,7 +69,7 @@ Person 4: Safa Khedhawria - UI polish, native JavaScript improvements, Nodemaile
 
 - [x] Create project folder
 - [x] Create GitHub repository
-- [ ] Create database in phpMyAdmin
+- [x] Create database in phpMyAdmin
 - [x] Create all database tables
 - [x] Create database connection file
 - [x] Create sign up page
